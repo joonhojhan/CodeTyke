@@ -8,8 +8,7 @@ npm start
 
 To start the node backend server:
 cd codeTykeNode
-node server.js
-
+npm start
 
 ## Jira 1:
 
