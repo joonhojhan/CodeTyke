@@ -1,0 +1,119 @@
+body{
+  background-image: url("/assets/background.png");
+  background-position: center;
+  background-size: cover;
+}
+
+#mainWrapper{
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: calc(100vh - 80px);
+}
+#headerBGColor{
+  position: absolute;
+  left:0;
+  top:0;
+  height: 40px;
+  width:100vw;
+  background-color:#2b2730;
+}
+#footerBGColor{
+  position: absolute;
+  left:0;
+  bottom:0;
+  height: 40px;
+  width:100vw;
+  background-color:#2b2c2c;
+}
+#navbarContainer{
+  height: 40px;
+  padding: 0 30px;
+  margin-bottom: 100px;
+}
+#navbarContainer img{
+  margin: 0;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 100px;
+}
+#questionHeader {
+    text-align: center;
+    color: #00bdff;
+    font-weight: 600;
+}
+#questionHeaderContainer{
+  margin: 10px 10px 50px;
+}
+#questionHeaderContainer div{
+  margin: 10px;
+}
+#questionSubHeader{
+  font-size: 12px;
+  text-align: center;
+}
+.selectionImageContainer img{
+  width: 150px;
+}
+#outerBox {
+    background-color: white;
+    box-shadow: 0px 0px 20px -15px;
+    padding: 50px 10px 30px;
+    border-radius: 10px;
+    margin: 0 auto;
+    text-align: center;
+}
+.selectionBoxes{
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  border: solid 1px lightgrey;
+  border-radius: 5px;
+}
+.checkboxText{
+  text-align: center;
+}
+.checkbox{
+  float: left;
+}
+.submitButton{
+  color: white;
+  padding: 10px;
+  margin: 20px;
+  width: 100px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  position: absolute;
+  right: 0;
+}
+.disabled {
+  background-color: lightgrey;
+}
+.active {
+  background-color: green;
+}
+#submitButtonContainer {
+    height: 50px;
+    position: relative;
+}
+#footerContainer {
+    position: absolute;
+    bottom: 0px;
+    color: white;
+    z-index: 10;
+    height: 40px;
+    width: 100%;
+    max-width: 800px;
+}
+#reserved{
+  margin-left: 20px;
+  color:lightgrey;
+}
+#copyright{
+
+}
+#footerSlogan {
+    float: right;
+    color:lightgrey;
+}
