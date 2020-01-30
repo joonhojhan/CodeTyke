@@ -14,7 +14,6 @@ function App() {
       }).then((data)=>{
         setCurrentQuestion(data);
       })
-
     },
     1500)
   }

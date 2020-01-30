@@ -14,7 +14,7 @@ const QuestionSelection = (props) => {
   }
 
    return(
-     <div key={props.index} className="selectionBox">
+     <div className="selectionBox">
        <div className="selectionImageContainer">
          <img alt="" src={props.selection.image} />
        </div>

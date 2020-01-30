@@ -9,7 +9,7 @@ const QuestionBody = (props) => {
   if(props.currentQuestion.possibleAnswers){
      selectionElArr = props.currentQuestion.possibleAnswers.map((selection, index)=>{
       return(
-          <QuestionSelection selection={selection} index={index}  checkboxStatus={checkboxStatus}  setCheckboxStatus={setCheckboxStatus} />
+          <QuestionSelection key={index} selection={selection} index={index}  checkboxStatus={checkboxStatus}  setCheckboxStatus={setCheckboxStatus} />
       )
     })
   } else {
