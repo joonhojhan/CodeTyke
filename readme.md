@@ -28,3 +28,9 @@ npm start
 To start the node backend server:
 cd byteTykeNode
 node server.js
+
+## Jira 3:
+
+You'll notice that each time you click on the submit button, it takes about 1.5 seconds for the following question to load. 
+
+Please add a rotating CSS loader in the center of the question area that begis on page load and when the submit button is clicked and is replaced once the JSON is returned from the backend.  
