@@ -4,13 +4,11 @@
 
 We need the question area to be mobile friendly. Currently the answers are somewhat responsive however they need to be set for the following screen sizes:
 
-> 500px - all images should sit in a single row
+greater than 500px - all images should sit in a single row
 
 
-< 500px - images should sit in a 2x2 grid, submit button should be full width (see mockup)
+less than 500px - images should sit in a 2x2 grid, submit button should be full width (see mockup)
 https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279091047
-
-Make sure footer sits at bottom at all widths.
 
 
 ## Jira 2:
