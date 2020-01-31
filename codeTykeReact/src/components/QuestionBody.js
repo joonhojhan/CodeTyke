@@ -30,7 +30,9 @@ const QuestionBody = (props) => {
         <div id="questionSubHeader">{props.currentQuestion.additionalInfo}</div>
       </div>
       <div id="outerBox">
-        {selectionElArr}
+        <div id="questionsBox">
+          {selectionElArr}
+        </div>
         <div id="submitButtonContainer">
           <div className={`submitButton ${checkboxStatus.includes(true) ? "active" : "disabled"}`} onClick={handleSubmit}>Submit</div>
         </div>

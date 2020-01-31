@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import QuestionBody from './components/QuestionBody';
+import ProgressBarWrapper from './components/ProgressBarWrapper';
 import './App.css';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
     <div>
       <Navbar />
       <div id="mainWrapper">
+        <ProgressBarWrapper currentQuestion={currentQuestion}/>
         <QuestionBody currentQuestion={currentQuestion} getQuestion={getQuestion}/>
       </div>
       <Footer />
