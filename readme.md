@@ -1,5 +1,15 @@
 # Code Tyke
 
+## To run the app
+
+To start the react frontend server:
+cd codeTykeReact
+npm start
+
+To start the node backend server:
+cd codeTykeNode
+npm start
+
 ## Jira 1:
 
 We need the question area to be mobile friendly. Currently the answers are somewhat responsive however they need to be set for the following screen sizes:
@@ -21,13 +31,6 @@ The progress bar should be animated each time the user advances to the next ques
 
 https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279091047
 
-To start the react frontend server:
-cd byteTykeReact
-npm start
-
-To start the node backend server:
-cd byteTykeNode
-node server.js
 
 ## Jira 3:
 
