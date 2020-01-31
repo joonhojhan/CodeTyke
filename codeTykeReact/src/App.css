@@ -123,6 +123,35 @@ body{
     color:lightgrey;
 }
 
+#progressBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 100%;
+}
+
+.progressBarDot {
+  height: 10px;
+  width: 10px;
+  border-radius: 10px;
+  background-color:lightgray;
+}
+
+#progressBarLine {
+  height: 4px;
+  background-color: lightgray;
+  transition: .2s ease-in;
+}
+
+#progressBarFiller {
+  height: 100%;
+  background-color: purple;
+  border-radius: 20px 0px 0px 20px;
+  transition: .2s ease-in;
+}
+
+
 
 
 @media (max-width: 600px) {
