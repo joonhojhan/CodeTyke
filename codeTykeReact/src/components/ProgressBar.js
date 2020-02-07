@@ -1,15 +1,20 @@
 import React from 'react';
-import ProgressBarFiller from './ProgressBarFiller';
-import ProgressBarFillerMax from './ProgressBarFillerMax';
 
 const ProgressBar = (props) => {
-  const dot = props.percentage === 100 ? <div /> : <div className="progressBarDot" />;
-  const bar = props.percentage === 100 ? <ProgressBarFillerMax percentage={props.percentage}/> : <ProgressBarFiller percentage={props.percentage}/>
+  const getStyles = (questionObj) => ({
+    borderRadius: questionObj.id === questionObj.totalQuestions ? "20px" : "20px 0px 0px 20px",
+    width: Math.ceil((questionObj.id / questionObj.totalQuestions) * 100) + "%"
+  });
+
+  const progressBarFill = getStyles(props.currentQuestion);
+
   return (
-    <div id="progressBar">
-      {bar}
-      <div id="progressBarLine" style={{width: `${100-props.percentage}%`}}/>
-      {dot}
+    <div className="progressBarContainer">
+      <div className="barFill" style={progressBarFill} />
+      <div className="barBg">
+        <div className="line" />
+        <div className="circle" />
+      </div>
     </div>
   )
 }
