@@ -71,9 +71,6 @@ body{
   float: left;
 }
 .submitButton{
-  /* display: flex; */
-  /* height: 30px; */
-  /* justify-content: center; */
   text-align: center;
   color: white;
   padding: 5px;
