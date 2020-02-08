@@ -7,8 +7,7 @@ const ProgressBar = (props) => {
   });
 
   const progressBarFill = getStyles(props.currentQuestion);
-
-  return (
+  return(
     <div className="progressBarContainer">
       <div className="barFill" style={progressBarFill} />
       <div className="barBg">

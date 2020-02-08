@@ -3,10 +3,7 @@ import QuestionSelection from './QuestionSelection';
 
 const QuestionBody = (props) => {
   const [checkboxStatus, setCheckboxStatus] = React.useState([false, false, false, false]);
-  // const [possibleAnswers, setPossibleAnswers] = React.useState([]);
-
   let possibleAnswersElArr = [];
-
   if(props.currentQuestion.possibleAnswers){
      possibleAnswersElArr = props.currentQuestion.possibleAnswers.map((selection, index)=>{
       return(
@@ -31,14 +28,17 @@ const QuestionBody = (props) => {
       props.getQuestion(props.currentQuestion.nextQuestionId);
     }
   }
-
   const loaderImg = <div className="submitLoader" style={{display: props.loading ? "block" : "none"}}><img src='loadingLogo.png' /></div>;
 
   return (
     <>
       <div id="questionHeaderContainer">
-        <div id="questionHeader">{props.currentQuestion.title}</div>
-        <div id="questionSubHeader">{props.currentQuestion.additionalInfo}</div>
+        <div id="questionHeader">
+          {props.currentQuestion.title}
+        </div>
+        <div id="questionSubHeader">
+          {props.currentQuestion.additionalInfo}
+        </div>
       </div>
       <div id="outerBox">
         <div id="questionsBox">
