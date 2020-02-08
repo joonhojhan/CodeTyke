@@ -7,13 +7,16 @@ import './App.css';
 
 function App() {
   const [currentQuestion, setCurrentQuestion] = React.useState({});
+  const [loading, setLoading] = React.useState(false);
 
   const getQuestion=(questionId)=>{
+    setLoading(true);
     setTimeout(() =>{
       fetch("http://localhost:8080/problems/"+questionId).then((res)=>{
         return res.json();
       }).then((data)=>{
         setCurrentQuestion(data);
+        setLoading(false);
       })
     },
     1500)
@@ -28,7 +31,7 @@ function App() {
       <Navbar />
       <div id="mainWrapper">
         <ProgressBar currentQuestion={currentQuestion}/>
-        <QuestionBody currentQuestion={currentQuestion} getQuestion={getQuestion}/>
+        <QuestionBody currentQuestion={currentQuestion} getQuestion={getQuestion} loading={loading}/>
       </div>
       <Footer />
     </div>

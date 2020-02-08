@@ -3,7 +3,6 @@ import QuestionSelection from './QuestionSelection';
 
 const QuestionBody = (props) => {
   const [checkboxStatus, setCheckboxStatus] = React.useState([false, false, false, false]);
-
   let possibleAnswersElArr = [];
   if(props.currentQuestion.possibleAnswers){
      possibleAnswersElArr = props.currentQuestion.possibleAnswers.map((selection, index)=>{
@@ -13,6 +12,15 @@ const QuestionBody = (props) => {
     })
   }
 
+  // React.useEffect(() => {
+  //   let possibleAnswersElArr = props.currentQuestion.possibleAnswers.map((selection, index)=>{
+  //     return(
+  //         <QuestionSelection key={index} selection={selection} index={index}  checkboxStatus={checkboxStatus}  setCheckboxStatus={setCheckboxStatus} />
+  //     )
+  //   })
+  //   setPossibleAnswers(possibleAnswersElArr);
+  // }, []);
+
   const handleSubmit=(event)=>{
     if(props.currentQuestion.id >= props.currentQuestion.totalQuestions){
       props.getQuestion(1);
@@ -20,6 +28,7 @@ const QuestionBody = (props) => {
       props.getQuestion(props.currentQuestion.nextQuestionId);
     }
   }
+  const loaderImg = <div className="submitLoader" style={{display: props.loading ? "block" : "none"}}><img src='loadingLogo.png' /></div>;
 
   return (
     <>
@@ -32,9 +41,13 @@ const QuestionBody = (props) => {
         </div>
       </div>
       <div id="outerBox">
-        {possibleAnswersElArr}
+        <div id="questionsBox">
+          {possibleAnswersElArr}
+        </div>
         <div id="submitButtonContainer">
-          <div className={`submitButton ${checkboxStatus.includes(true) ? "active" : "disabled"}`} onClick={handleSubmit}>Submit</div>
+  <div className={`submitButton ${checkboxStatus.includes(true) ? "active" : "disabled"}`} onClick={handleSubmit}>
+    {loaderImg}
+     Submit</div>
         </div>
       </div>
     </>
