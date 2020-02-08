@@ -122,7 +122,7 @@ body{
   position: relative;
 }
 
-.bar {
+.barFill {
   width: 0%;
   transition: width ease .5s;
   height: 100%;
