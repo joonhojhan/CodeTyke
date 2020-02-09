@@ -8,7 +8,7 @@ const Button = (props) => {
 
   return (
     <div className={className} onClick={props.handleSubmit} >
-      <div className="submitLoader" style={{display: props.loading ? "inline" : "none"}}><img src='loadingLogo.png' /></div>
+      <div className="submitLoader" style={{display: props.loading ? "inline" : "none"}}><img src='/assets/loadingLogo.png' /></div>
       {label}
       {icon}
     </div>
