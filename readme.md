@@ -37,4 +37,4 @@ https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072924
 
 Whenever the modal is open, there should be a light gray overlay. If the user taps somewhere not on the modal, it should close. Scrolling should be locked when the modal is open and enabled when the modal is closed.
 
-Note: you will need to source the icon from somewhere like icomoon. Extra credit if you identify any other elements that should be converted into icons. 
+Note: you may need to source the icon from somewhere like icomoon. Extra credit if you identify any other elements that should be converted into icons. 
