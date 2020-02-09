@@ -5,9 +5,15 @@ import Button from './Button';
 
 const QuestionBody = (props) => {
 
-  if(props.currentQuestion.id){
-
     const handleSubmit=(event)=>{
+
+      // if button inactive prompt to select answer
+
+      // else check for correct answer
+        //handle incorrect
+
+        // handle correct
+
       props.setLoading(true);
       if(props.currentQuestion.id >= props.currentQuestion.totalQuestions){
         props.getQuestion(1);
@@ -34,9 +40,6 @@ const QuestionBody = (props) => {
         </div>
       </>
     )
-  }
-
-  return (<div class="loader-4"><span></span></div>)
 }
 
 // className={`submitButton ${checkboxStatus.includes(true) ? "active" : "disabled"}`}
