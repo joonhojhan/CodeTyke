@@ -1,5 +1,6 @@
 import React from 'react';
 import QuestionSelectionArea from './QuestionSelectionArea';
+import Button from './Button';
 
 
 const QuestionBody = (props) => {
@@ -15,8 +16,6 @@ const QuestionBody = (props) => {
       }
     }
 
-    const loaderImg = <div className="submitLoader" style={{display: props.loading ? "block" : "none"}}><img src='loadingLogo.png' /></div>;
-
     return (
       <>
         <div id="questionHeaderContainer">
@@ -30,10 +29,7 @@ const QuestionBody = (props) => {
         <div id="outerBox">
           <QuestionSelectionArea possibleAnswers={props.currentQuestion.possibleAnswers} />
           <div id="submitButtonContainer">
-            <div className="submitButton disabled" onClick={handleSubmit}>
-              {loaderImg}
-              Submit
-            </div>
+            <Button handleSubmit={handleSubmit} loading={props.loading} />
           </div>
         </div>
       </>
