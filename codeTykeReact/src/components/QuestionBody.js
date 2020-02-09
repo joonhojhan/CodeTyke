@@ -1,11 +1,14 @@
 import React from 'react';
 import QuestionSelectionArea from './QuestionSelectionArea';
 import Button from './Button';
+import Modal from './Modal';
 
 
 const QuestionBody = (props) => {
 
-    const handleSubmit=(event)=>{
+  const [showModal, setShowModal] = React.useState(false);
+
+    const handleSubmit=(event)=> {
 
       // if button inactive prompt to select answer
 
@@ -22,12 +25,21 @@ const QuestionBody = (props) => {
       }
     }
 
+    const showAdditionalInfo = () => {
+      setShowModal(true);
+    }
+
     return (
       <>
         <div id="questionHeaderContainer">
+          <Modal showModal={showModal} setShowModal={setShowModal} content={props.currentQuestion.additionalInfo} />
           <div id="questionHeader">
-            {props.currentQuestion.title}
+            <div class="title">
+              {props.currentQuestion.title}
+            </div>
+            <span class="icon icon-info" onClick={showAdditionalInfo}></span>
           </div>
+
           <div id="questionSubHeader">
             {props.currentQuestion.additionalInfo}
           </div>

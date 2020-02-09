@@ -26,5 +26,4 @@ const QuestionSelection = (props) => {
    )
 }
 
-
 export default QuestionSelection;

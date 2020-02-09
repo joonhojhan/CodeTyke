@@ -7,6 +7,9 @@
 @import 'scss/components/ProgressBar';
 
 @import 'scss/buttons/Button';
+@import 'scss/components/Modal';
+
+@import 'scss/icons/style';
 
 body{
   background-image: url("/assets/background.png");
@@ -37,18 +40,35 @@ body{
 #questionHeaderContainer{
   margin: 25px 10px;
 }
-#questionHeaderContainer div{
-  margin: 10px;
+#questionHeaderContainer {
+  .title {
+      padding: 10px;
+  }
+
+  .icon {
+    display: none;
+  }
 }
 #questionSubHeader{
-  font-size: 12px;
+  font-size: 16px;
   text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
   #mainWrapper { margin-top: 20px; }
   #questionSubHeader{ display: none;}
-  #questionHeaderContainer { margin: 20px 10px;}
+  #questionHeaderContainer {
+    margin: 20px 10px;
+    contain: layout;
+    .title {
+      float: left;
+    }
+    .icon {
+      padding: 10px;
+      float: right;
+      display: inline;
+    }
+  }
 }
 
 
