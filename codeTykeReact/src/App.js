@@ -3,14 +3,13 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import QuestionBody from './components/QuestionBody';
 import ProgressBar from './components/ProgressBar';
-import './App.css';
+import './App.scss';
 
 function App() {
   const [currentQuestion, setCurrentQuestion] = React.useState({});
   const [loading, setLoading] = React.useState(false);
 
   const getQuestion=(questionId)=>{
-    setLoading(true);
     setTimeout(() =>{
       fetch("http://localhost:8080/problems/"+questionId).then((res)=>{
         return res.json();
@@ -31,7 +30,7 @@ function App() {
       <Navbar />
       <div id="mainWrapper">
         <ProgressBar currentQuestion={currentQuestion}/>
-        <QuestionBody currentQuestion={currentQuestion} getQuestion={getQuestion} loading={loading}/>
+        <QuestionBody currentQuestion={currentQuestion} getQuestion={getQuestion} loading={loading} setLoading={setLoading}/>
       </div>
       <Footer />
     </div>

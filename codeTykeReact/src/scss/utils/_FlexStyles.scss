@@ -1,0 +1,10 @@
+.flex-space-evenly {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-around;
+}
