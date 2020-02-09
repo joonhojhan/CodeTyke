@@ -1,40 +1,28 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import QuestionBody from './components/QuestionBody';
-import ProgressBar from './components/ProgressBar';
+import LearningModule from './components/LearningModule';
 import './App.scss';
 
+
 function App() {
-  const [currentQuestion, setCurrentQuestion] = React.useState({});
-  const [loading, setLoading] = React.useState(false);
 
-  const getQuestion=(questionId)=>{
-    setTimeout(() =>{
-      fetch("http://localhost:8080/problems/"+questionId).then((res)=>{
-        return res.json();
-      }).then((data)=>{
-        setCurrentQuestion(data);
-        setLoading(false);
-      })
-    },
-    1500)
-  }
+  //TODO: LearningModule should take props.id to kick off api call
 
-  React.useEffect(()=>{
-    getQuestion(1);
-  },[]);
+  // if(learningModule.id){
+    var learningModule = <LearningModule />
+  // } else {
+    // var pageLoader = <PageLoader />;
+  // }
 
   return (
     <div>
       <Navbar />
       <div id="mainWrapper">
-        <ProgressBar currentQuestion={currentQuestion}/>
-        <QuestionBody currentQuestion={currentQuestion} getQuestion={getQuestion} loading={loading} setLoading={setLoading}/>
+        {learningModule}
       </div>
       <Footer />
     </div>
-
   );
 }
 
