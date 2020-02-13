@@ -26,12 +26,13 @@ const QuestionBody = (props) => {
     }
 
     const showAdditionalInfo = () => {
-      setShowModal(true);
+      setShowModal(!showModal);
     }
 
     return (
       <>
         <div id="questionHeaderContainer">
+          <div class="overlay"  onClick={showAdditionalInfo} style={{display: showModal ? "block" : "none"}}></div>
           <Modal showModal={showModal} setShowModal={setShowModal} content={props.currentQuestion.additionalInfo} />
           <div id="questionHeader">
             <div class="title">
