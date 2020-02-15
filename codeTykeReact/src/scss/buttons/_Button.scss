@@ -8,6 +8,7 @@
   font-weight: 600;
   float: right;
   margin-right: 20px;
+  background-color: #2fcc71;
 }
 
 @media only screen and (max-width: 600px) {
@@ -20,9 +21,6 @@
 
 .disabled {
   background-color: lightgrey;
-}
-.active {
-  background-color: green;
 }
 
 .submitLoader {

@@ -5,23 +5,39 @@ import Modal from './Modal';
 
 
 const QuestionBody = (props) => {
-
   const [showModal, setShowModal] = React.useState(false);
+  const [answerSubmitResult, setAnswerSubmitResult] = React.useState({});
+  const [checkboxStatus, setCheckboxStatus] = React.useState([false, false, false, false]);
+
+    const checkAnswer=(id, answers)=>{
+      answers = answers.join(",");
+      fetch("http://localhost:8080/checkanswer/" + id + "?answers=" + answers)
+        .then((res)=>{
+          return res.json();
+        }).then((data)=>{
+          console.log(data);
+          props.setLoading(false);
+          setAnswerSubmitResult(data);
+        }).catch((err)=>{
+          props.setLoading(false);
+          console.log(err);
+        });
+    }
 
     const handleSubmit=(event)=> {
-
-      // if button inactive prompt to select answer
-
-      // else check for correct answer
-        //handle incorrect
-
-        // handle correct
-
-      props.setLoading(true);
-      if(props.currentQuestion.id >= props.currentQuestion.totalQuestions){
-        props.getQuestion(1);
-      } else {
+      // checkAnswer(props.currentQuestion.id, checkboxStatus);
+      if(event.target.className.includes("disabled")){
+        console.log("Hey Disabled");
+      } else if (answerSubmitResult.result){
+        //next page
+        setAnswerSubmitResult({});
+        setCheckboxStatus([false, false, false, false]);
+        props.setLoading(true);
         props.getQuestion(props.currentQuestion.nextQuestionId);
+      } else {
+        //check answer
+        props.setLoading(true);
+        checkAnswer(props.currentQuestion.id, checkboxStatus);
       }
     }
 
@@ -32,13 +48,13 @@ const QuestionBody = (props) => {
     return (
       <>
         <div id="questionHeaderContainer">
-          <div class="overlay"  onClick={showAdditionalInfo} style={{display: showModal ? "block" : "none"}}></div>
+          <div className="overlay"  onClick={showAdditionalInfo} style={{display: showModal ? "block" : "none"}}></div>
           <Modal showModal={showModal} setShowModal={setShowModal} content={props.currentQuestion.additionalInfo} />
           <div id="questionHeader">
-            <div class="title">
+            <div className="title">
               {props.currentQuestion.title}
             </div>
-            <span class="icon icon-info" onClick={showAdditionalInfo}></span>
+            <span className="icon icon-info" onClick={showAdditionalInfo}></span>
           </div>
 
           <div id="questionSubHeader">
@@ -46,9 +62,9 @@ const QuestionBody = (props) => {
           </div>
         </div>
         <div id="outerBox">
-          <QuestionSelectionArea possibleAnswers={props.currentQuestion.possibleAnswers} />
+          <QuestionSelectionArea checkboxStatus={checkboxStatus} setCheckboxStatus={setCheckboxStatus} possibleAnswers={props.currentQuestion.possibleAnswers} />
           <div id="submitButtonContainer">
-            <Button handleSubmit={handleSubmit} loading={props.loading} />
+            <Button type={ checkboxStatus.some((el)=>el===true)?"":"disabled" } handleSubmit={handleSubmit} loading={props.loading} />
           </div>
         </div>
       </>

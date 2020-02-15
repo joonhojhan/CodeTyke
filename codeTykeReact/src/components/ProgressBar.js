@@ -2,8 +2,8 @@ import React from 'react';
 
 const ProgressBar = (props) => {
   const getStyles = (questionObj) => ({
-    borderRadius: questionObj.id === questionObj.totalQuestions ? "20px" : "20px 0px 0px 20px",
-    width: Math.ceil((questionObj.id / questionObj.totalQuestions) * 100) + "%"
+    borderRadius: questionObj.id+1 === questionObj.totalQuestions ? "20px" : "20px 0px 0px 20px",
+    width: Math.ceil(((questionObj.id+1) / questionObj.totalQuestions) * 100) + "%"
   });
 
   const progressBarFill = getStyles(props.currentQuestion);

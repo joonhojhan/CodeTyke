@@ -12,15 +12,14 @@ const QuestionSelection = (props) => {
     })
     props.setCheckboxStatus(newCheckboxStatus);
   }
-
    return(
      <div className="selectionBox">
        <div className="selectionImageContainer">
-         <img alt="" src={props.selection.image} />
+         <img alt="" src={props.possibleAnswer.image} />
        </div>
        <div className="checkboxText">
-         <input onChange={(event)=>handleCheckbox(event, props.index)} className="checkbox" type="checkbox" />
-         <span className="selectionText">{props.selection.text}</span>
+         <input checked={ props.checkboxStatus[props.index] ? "checked" : "" } onChange={(event)=>handleCheckbox(event, props.index)} className="checkbox" type="checkbox" />
+         <span className="selectionText">{props.possibleAnswer.text}</span>
        </div>
      </div>
    )

@@ -3,26 +3,24 @@ import QuestionSelection from './QuestionSelection';
 
 const QuestionSelectionArea = (props) => {
 
-  const [checkboxStatus, setCheckboxStatus] = React.useState([false, false, false, false]);
-
   var firstTwoAnswers = [],
       secondTwoAnswers = [];
 
-   props.possibleAnswers.map((selection, index)=>{
+   props.possibleAnswers.map((possibleAnswer, index)=>{
      if(index < 2){
-       firstTwoAnswers.push(<QuestionSelection key={index} selection={selection} index={index}  checkboxStatus={checkboxStatus}  setCheckboxStatus={setCheckboxStatus} />)
+       firstTwoAnswers.push(<QuestionSelection key={index} possibleAnswer={possibleAnswer} index={index}  {...props} />)
      } else {
-       secondTwoAnswers.push(<QuestionSelection key={index} selection={selection} index={index}  checkboxStatus={checkboxStatus}  setCheckboxStatus={setCheckboxStatus} />)
+       secondTwoAnswers.push(<QuestionSelection key={index} possibleAnswer={possibleAnswer} index={index}  {...props} />)
      }
    })
 
     return(
       <div id="questionsBox">
-        <div class="flex-space-evenly">
-          <div class="flex-row">
+        <div className="flex-space-evenly">
+          <div className="flex-row">
             {firstTwoAnswers}
           </div>
-          <div class="flex-row">
+          <div className="flex-row">
             {secondTwoAnswers}
           </div>
         </div>

@@ -9,22 +9,20 @@ const LearningModule = (props) => {
   const [loading, setLoading] = React.useState(false);
 
   React.useEffect(()=>{
-    getQuestion(1);
+    getQuestion(0);
   },[]);
 
   const getQuestion=(questionId)=>{
-    setTimeout(() =>{
-      fetch("http://localhost:8080/problems/"+questionId).then((res)=>{
-        return res.json();
-      }).then((data)=>{
-        setCurrentQuestion(data);
-        setLoading(false);
-      })
-    },
-    1500)
+    fetch("http://localhost:8080/problems/"+questionId).then((res)=>{
+      return res.json();
+    }).then((data)=>{
+      setCurrentQuestion(data);
+      setLoading(false);
+    }).catch((err)=>{
+      console.log(err);
+    })
   }
-
-  if(currentQuestion.id){
+  if(currentQuestion.id >= 0){
     var progressBar = <ProgressBar currentQuestion={currentQuestion}/>
     var questionBody = <QuestionBody currentQuestion={currentQuestion} getQuestion={getQuestion} loading={loading} setLoading={setLoading}/>
   } else {
@@ -32,7 +30,7 @@ const LearningModule = (props) => {
   }
 
   return (
-    <div class="learning-module">
+    <div className="learning-module">
       {progressBar}
       {questionBody}
       {pageLoader}

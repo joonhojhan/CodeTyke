@@ -10,10 +10,10 @@ const Modal = (props) => {
 
   return (
     <>
-      <div class="modal" style={{display: props.showModal ? "block" : "none"}}>
-        <span class="icon icon-cross" onClick={hideModal}></span>
-        <div class="title"> Rules </div>
-        <div class="content">
+      <div className="modal" style={{display: props.showModal ? "block" : "none"}}>
+        <span className="icon icon-cross" onClick={hideModal}></span>
+        <div className="title"> Rules </div>
+        <div className="content">
           {props.content}
         </div>
       </div>
