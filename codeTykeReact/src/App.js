@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import LearningModule from './components/LearningModule';
 import './App.scss';
+// import './icons/style.css';
 
 
 function App() {
