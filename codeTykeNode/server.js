@@ -9,7 +9,7 @@ let questionArr = [
   {
     id:0,
     title:"Select All the Strings",
-    additionalInfo:'Click on the boxes that are "strings". Remember that the easiest way to recognize a string is to check if it is surrounded by " or \'.',
+    additionalInfo:'Click on the boxes that are strings. Remember that the easiest way to recognize a string is to check if it is surrounded by " or \'.',
     totalQuestions:4,
     nextQuestionId:1,
     possibleAnswers: [
@@ -27,7 +27,7 @@ let questionArr = [
       },
       {
         "image": "https://i.ibb.co/6wr1QbV/girls.png",
-        "text": "4 Girls",
+        "text": "'4 Girls'",
         "type": "string",
         "isCorrect": true
       },
