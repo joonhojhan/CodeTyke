@@ -15,7 +15,6 @@ const QuestionBody = (props) => {
         .then((res)=>{
           return res.json();
         }).then((data)=>{
-          console.log(data);
           props.setLoading(false);
           setAnswerSubmitResult(data);
         }).catch((err)=>{
@@ -25,7 +24,7 @@ const QuestionBody = (props) => {
     }
 
     const handleSubmit=(event)=> {
-      // checkAnswer(props.currentQuestion.id, checkboxStatus);
+
       if(event.target.className.includes("disabled")){
         console.log("Hey Disabled");
       } else if (answerSubmitResult.result){

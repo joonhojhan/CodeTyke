@@ -6,13 +6,7 @@ import './styles/App.scss';
 
 function App() {
 
-  //TODO: LearningModule should take props.id to kick off api call
-
-  // if(learningModule.id){
-    var learningModule = <LearningModule />
-  // } else {
-    // var pageLoader = <PageLoader />;
-  // }
+  var learningModule = <LearningModule />
 
   return (
     <div>

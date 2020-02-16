@@ -64,14 +64,19 @@ body{
   #questionHeaderContainer {
     margin: 20px 10px;
     contain: layout;
-    .title {
-      float: left;
+    #questionHeader {
+      display: flex;
+      justify-content: space-between;
+      .title {
+        text-align: left;
+      }
+      .icon-info {
+        padding: 10px;
+        // float:`` right;
+        display: inline;
+      }
     }
-    .icon-info {
-      padding: 10px;
-      float: right;
-      display: inline;
-    }
+
   }
 }
 
