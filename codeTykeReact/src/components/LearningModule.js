@@ -13,19 +13,18 @@ const LearningModule = (props) => {
   },[]);
 
   const getQuestion=(questionId)=>{
-    setTimeout(() =>{
       fetch("http://localhost:8080/problems/"+questionId)
       .then((res)=>{
         return res.json();
       }).then((data)=>{
         setCurrentQuestion(data);
         setLoading(false);
-      })
-    },
-    1500)
+      }).catch((err)=>{
+        console.log(err);
+      });
   }
 
-  if(currentQuestion.id){
+  if(currentQuestion.id >= 0){
     var progressBar = <ProgressBar currentQuestion={currentQuestion}/>
     var questionBody = <QuestionBody currentQuestion={currentQuestion} getQuestion={getQuestion} loading={loading} setLoading={setLoading}/>
   } else {
