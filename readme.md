@@ -75,4 +75,4 @@ https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072921
 
 After Correct Answer:
 
-- Clicking on "next" takes user to a question with an id that is found at "/problems/"+ <nextQuestionId>
+- Clicking on "next" takes user to a question with an id that is found at "/problems/" + nextQuestionId
