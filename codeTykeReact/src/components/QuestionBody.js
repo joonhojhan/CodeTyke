@@ -8,6 +8,7 @@ const QuestionBody = (props) => {
   const [showModal, setShowModal] = React.useState(false);
   const [answerSubmitResult, setAnswerSubmitResult] = React.useState({});
   const [checkboxStatus, setCheckboxStatus] = React.useState([false, false, false, false]);
+  const [buttonType, setButtonType] = React.useState("disabled";
 
     const checkAnswer=(id, answers)=>{
 
@@ -38,18 +39,6 @@ const QuestionBody = (props) => {
       setShowModal(!showModal);
     }
 
-    const setButtonType = () => {
-      let type = "disabled";
-
-      //active
-
-      //correct response
-
-      //incorrect response
-
-      return type;
-    }
-
     return (
       <>
         <div id="questionHeaderContainer">
@@ -69,7 +58,7 @@ const QuestionBody = (props) => {
         <div id="outerBox">
           <QuestionSelectionArea answerSubmitResult={answerSubmitResult} checkboxStatus={checkboxStatus} setCheckboxStatus={setCheckboxStatus} possibleAnswers={props.currentQuestion.possibleAnswers} />
           <div id="submitButtonContainer">
-            <Button label="Submit" type={ setButtonType() } handleSubmit={handleSubmit} loading={props.loading} />
+            <Button label={"Submit"} type={ setButtonType() } handleSubmit={handleSubmit} loading={props.loading} />
           </div>
         </div>
       </>
