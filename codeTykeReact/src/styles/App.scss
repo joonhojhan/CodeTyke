@@ -1,15 +1,19 @@
-@import 'scss/shell/Header';
-@import 'scss/shell/Footer';
-@import 'scss/shell/PageLoader';
+/* Sitewide */
+@import '/utils/colors';
+@import '/icons/style';
+@import '/utils/FlexStyles';
 
-@import 'scss/utils/FlexStyles';
 
-@import 'scss/components/ProgressBar';
+/* Shell */
+@import '/shell/Header';
+@import '/shell/Footer';
+@import '/shell/PageLoader';
 
-@import 'scss/buttons/Button';
-@import 'scss/components/Modal';
+/* Components */
+@import '/components/ProgressBar';
+@import '/components/Button';
+@import '/components/Modal';
 
-@import 'scss/icons/style';
 
 body{
   background-image: url("/assets/background.png");
@@ -34,7 +38,7 @@ body{
 
 #questionHeader {
     text-align: center;
-    color: #00bdff;
+    color: $morning-sky;
     font-weight: 600;
 }
 #questionHeaderContainer{
@@ -60,14 +64,18 @@ body{
   #questionHeaderContainer {
     margin: 20px 10px;
     contain: layout;
-    .title {
-      float: left;
+    #questionHeader {
+      display: flex;
+      justify-content: space-between;
+      .title {
+        text-align: left;
+      }
+      .icon-info {
+        padding: 10px;
+        display: inline;
+      }
     }
-    .icon-info {
-      padding: 10px;
-      float: right;
-      display: inline;
-    }
+
   }
 }
 

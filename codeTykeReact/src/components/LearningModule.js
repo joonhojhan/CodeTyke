@@ -13,15 +13,17 @@ const LearningModule = (props) => {
   },[]);
 
   const getQuestion=(questionId)=>{
-    fetch("http://localhost:8080/problems/"+questionId).then((res)=>{
-      return res.json();
-    }).then((data)=>{
-      setCurrentQuestion(data);
-      setLoading(false);
-    }).catch((err)=>{
-      console.log(err);
-    })
+      fetch("http://localhost:8080/problems/"+questionId)
+      .then((res)=>{
+        return res.json();
+      }).then((data)=>{
+        setCurrentQuestion(data);
+        setLoading(false);
+      }).catch((err)=>{
+        console.log(err);
+      });
   }
+
   if(currentQuestion.id >= 0){
     var progressBar = <ProgressBar currentQuestion={currentQuestion}/>
     var questionBody = <QuestionBody currentQuestion={currentQuestion} getQuestion={getQuestion} loading={loading} setLoading={setLoading}/>

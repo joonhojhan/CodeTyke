@@ -9,7 +9,7 @@ let questionArr = [
   {
     id:0,
     title:"Select All the Strings",
-    additionalInfo:'Click on the boxes that are "strings". Remember that the easiest way to recognize a string is to check if it is surrounded by " or \'.',
+    additionalInfo:'Click on the boxes that are strings. Remember that the easiest way to recognize a string is to check if it is surrounded by " or \'.',
     totalQuestions:4,
     nextQuestionId:1,
     possibleAnswers: [
@@ -27,13 +27,13 @@ let questionArr = [
       },
       {
         "image": "https://i.ibb.co/6wr1QbV/girls.png",
-        "text": "4 Girls",
+        "text": "'4 Girls'",
         "type": "string",
         "isCorrect": true
       },
       {
         "image": "https://i.ibb.co/6BsyfRD/bus.png",
-        "text": "School Bus",
+        "text": '"School Bus"',
         "type": "string",
         "isCorrect": true
       }
@@ -54,7 +54,7 @@ let questionArr = [
       },
       {
         "image": "https://i.ibb.co/9ncNJF1/number.png",
-        "text": "Thirteen",
+        "text": "'Thirteen'",
         "type": "string",
         "isCorrect": false
       },
@@ -87,7 +87,7 @@ let questionArr = [
       },
       {
         "image": "https://i.ibb.co/9ncNJF1/number.png",
-        "text": "This is true.",
+        "text": '"This is true."',
         "type": "string",
         "isCorrect": false
       },
@@ -114,13 +114,13 @@ let questionArr = [
     possibleAnswers: [
       {
         "image": "https://i.ibb.co/M6bQZ4R/bool.png",
-        "text": "It's show time!",
+        "text": "'It's show time!'",
         "type": "string",
         "isCorrect": true
       },
       {
         "image": "https://i.ibb.co/9ncNJF1/number.png",
-        "text": "pop@open.com",
+        "text": "'pop@open.com'",
         "type": "string",
         "isCorrect": true
       },
