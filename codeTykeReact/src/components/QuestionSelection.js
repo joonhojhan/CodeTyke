@@ -4,7 +4,11 @@ const QuestionSelection = (props) => {
 
   const handleCheckbox=(event, currentSelectionIndex)=>{
     let newCheckboxStatus = props.checkboxStatus.map((status, index)=>{
-      return status = index === currentSelectionIndex ? !status : status;
+      if(index === currentSelectionIndex){
+        return status = !status;
+      } else {
+        return status;
+      }
     });
     props.setCheckboxStatus(newCheckboxStatus);
   }
