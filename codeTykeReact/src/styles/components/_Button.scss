@@ -3,12 +3,24 @@
   color: white;
   width: 150px;
   line-height: 50px;
-  font-size: 16px;
+  font-size: 20px;
   border-radius: 25px;
   font-weight: 600;
   float: right;
   margin-right: 20px;
   background-color: $morning-sky;
+  &.disabled {
+    transition: 0.3s;
+    background-color: $elephant-paw;
+  }
+
+  &.affirmative {
+    background-color: $grass-blade;
+  }
+
+  &.incorrect {
+    background-color: $faded-fire;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -19,9 +31,7 @@
   }
 }
 
-.disabled {
-  background-color: $elefant-foot;
-}
+
 
 .submitLoader {
   position: absolute;

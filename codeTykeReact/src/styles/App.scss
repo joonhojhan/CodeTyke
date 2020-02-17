@@ -99,8 +99,24 @@ body{
 .selectionBox{
   padding: 10px;
   margin: 10px;
-  border: solid 1px lightgrey;
+  border: solid 1px $elephant-paw;
   border-radius: 5px;
+  &.active {
+    border: solid 1px  $morning-sky;
+    background-color: $morning-sky;
+    color: white;
+  }
+  &.correct {
+    border: solid 1px $grass-blade;
+    background-color: $grass-blade;
+    color: white;
+  }
+
+  &.incorrect {
+    border: solid 1px $faded-fire;
+    background-color: $faded-fire;
+    color: white;
+  }
 }
 .checkboxText{
   text-align: center;

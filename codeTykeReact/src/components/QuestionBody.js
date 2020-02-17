@@ -17,6 +17,11 @@ const QuestionBody = (props) => {
         }).then((data)=>{
           props.setLoading(false);
           setAnswerSubmitResult(data);
+          if(!data.result)
+            setTimeout(function(){
+               setAnswerSubmitResult({})
+               setCheckboxStatus([false, false, false, false])
+            }, 1000)
         }).catch((err)=>{
           props.setLoading(false);
           console.log(err);
@@ -44,6 +49,19 @@ const QuestionBody = (props) => {
       setShowModal(!showModal);
     }
 
+    const setButtonType = () => {
+      let type = "disabled";
+
+      if(answerSubmitResult.result === false)
+        type= "incorrect"
+      else if(answerSubmitResult.result)
+        type= "affirmative";
+      else if(checkboxStatus.some((el)=>el===true))
+        type = ""
+
+      return type;
+    }
+
     return (
       <>
         <div id="questionHeaderContainer">
@@ -61,15 +79,13 @@ const QuestionBody = (props) => {
           </div>
         </div>
         <div id="outerBox">
-          <QuestionSelectionArea checkboxStatus={checkboxStatus} setCheckboxStatus={setCheckboxStatus} possibleAnswers={props.currentQuestion.possibleAnswers} />
+          <QuestionSelectionArea answerSubmitResult={answerSubmitResult} checkboxStatus={checkboxStatus} setCheckboxStatus={setCheckboxStatus} possibleAnswers={props.currentQuestion.possibleAnswers} />
           <div id="submitButtonContainer">
-            <Button type={ checkboxStatus.some((el)=>el===true)?"":"disabled" } handleSubmit={handleSubmit} loading={props.loading} />
+            <Button label={answerSubmitResult.result ? "Next" : "Submit"} type={ setButtonType() } handleSubmit={handleSubmit} loading={props.loading} />
           </div>
         </div>
       </>
     )
 }
-
-// className={`submitButton ${checkboxStatus.includes(true) ? "active" : "disabled"}`}
 
 export default QuestionBody;

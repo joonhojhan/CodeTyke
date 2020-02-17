@@ -1,5 +1,17 @@
 ## Past Assignments
 
+## Week 3
+
+On mobile, to best utilize space, a question's description is shown in a modal that is triggered by clicking an info icon.
+
+You can see the icon here: https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279091047
+
+https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072924
+
+Whenever the modal is open, there should be a light gray overlay. If the user taps somewhere not on the modal, it should close. Scrolling should be locked when the modal is open and enabled when the modal is closed.
+
+Note: you may need to source the icon from somewhere like icomoon. Extra credit if you identify any other elements that should be converted into icons.
+
 
 ## Week 2
 
