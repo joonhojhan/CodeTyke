@@ -29,12 +29,49 @@ npm start
 
 ## This Week's Jira
 
-On mobile, to best utilize space, a question's description is shown in a modal that is triggered by clicking an info icon.
+This week we're tackling functionality of our multiple choice component. 
 
-You can see the icon here: https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279091047
+## On page load: 
 
-https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072924
+Source: https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072923
 
-Whenever the modal is open, there should be a light gray overlay. If the user taps somewhere not on the modal, it should close. Scrolling should be locked when the modal is open and enabled when the modal is closed.
+- Submit button should be inactive. User clicking submit should have no response (later we'll implement a toast). 
 
-Note: you may need to source the icon from somewhere like icomoon. Extra credit if you identify any other elements that should be converted into icons. 
+- When user clicks on an answer card, the color should toggle between inactive (gray) and active (blue). 
+
+https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072922
+
+- Whenever one or more answer cards are selected, button should become active and turn green. 
+
+- If user unselects all answers, button should return to inactive. 
+
+## Upon submitting the answer:
+
+-- Make use of the 'checkAnswer' function, passing in <questionId> and <checkboxStatus>
+  
+Backend will return a JSON response with :
+
+{result: <boolean>}
+
+## A correct answer should:
+
+- Change text on submit button to 'Next'
+
+-Show check icon and 'Correct' Text above button 
+
+Source: https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072919
+
+
+## An incorrect answer should: 
+
+- turn all submitted answers red for 1 second then fade back to inactive and uncheck all selections
+
+- show inactive submit button
+
+- show 'x' icon and text "Incorrect"
+
+https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072921
+
+After Correct Answer:
+
+-clicking on "next" takes user to a question with an id that is found at "/problems/"+ <nextQuestionId>
