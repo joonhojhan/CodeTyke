@@ -34,13 +34,15 @@ This week we're tackling functionality of our multiple choice component. 
 
 ## On page load: 
 
-Source: https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072923
-
+Mobile design: https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072923
+Desktop design: https://projects.invisionapp.com/share/2KFKXD5BXZU#/screens/276268031
+  
 - Submit button should be inactive. User clicking submit should have no response (later we'll implement a toast). 
 
 - When user clicks on an answer card, the color should toggle between inactive (white) and active (blue). 
 
-https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072922
+Mobile design: https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072922
+Desktop design: https://projects.invisionapp.com/share/2KFKXD5BXZU#/screens/276268032
 
 - Whenever one or more answer cards are selected, button should become active and turn green. 
 
@@ -60,8 +62,8 @@ The backend will return a JSON response with :
 
 - Show check icon and 'Correct' Text above button 
 
-Source: https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072919
-
+Mobile design: https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072919
+Desktop design: https://projects.invisionapp.com/share/2KFKXD5BXZU#/screens/276268035
 
 ## An incorrect answer should: 
 
@@ -71,7 +73,8 @@ Source: https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072919
 
 - Show 'x' icon and text "Incorrect"
 
-https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072921
+Mobile design: https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072921
+Desktop design: https://projects.invisionapp.com/share/2KFKXD5BXZU#/screens/276268033
 
 After Correct Answer:
 
