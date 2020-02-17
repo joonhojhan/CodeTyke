@@ -12,40 +12,26 @@ const QuestionBody = (props) => {
     const checkAnswer=(id, answers)=>{
 
       answers = answers.join(",");
-      setTimeout(
-        function(){
+
       fetch("http://localhost:8080/checkanswer/" + id + "?answers=" + answers)
         .then((res)=>{
           return res.json();
         }).then((data)=>{
           props.setLoading(false);
-          setAnswerSubmitResult(data);
-          if(!data.result)
-            setTimeout(function(){
-               setAnswerSubmitResult({})
-               setCheckboxStatus([false, false, false, false])
-            }, 1000)
         }).catch((err)=>{
           props.setLoading(false);
           console.log(err);
-        })}, 100000)
+        })
     }
 
     const handleSubmit=(event)=> {
 
-      if(event.target.className.includes("disabled")){
-        console.log("Hey Disabled");
-      } else if (answerSubmitResult.result){
-        //next page
-        setAnswerSubmitResult({});
-        setCheckboxStatus([false, false, false, false]);
-        props.setLoading(true);
-        props.getQuestion(props.currentQuestion.nextQuestionId);
-      } else {
-        //check answer
-        props.setLoading(true);
-        checkAnswer(props.currentQuestion.id, checkboxStatus);
-      }
+        // on disabled
+
+        // on next page
+
+        //on enabled
+
     }
 
     const showAdditionalInfo = () => {
@@ -55,12 +41,11 @@ const QuestionBody = (props) => {
     const setButtonType = () => {
       let type = "disabled";
 
-      if(answerSubmitResult.result === false)
-        type= "incorrect"
-      else if(answerSubmitResult.result)
-        type= "affirmative";
-      else if(checkboxStatus.some((el)=>el===true))
-        type = ""
+      //active
+
+      //correct response
+
+      //incorrect response
 
       return type;
     }
@@ -84,7 +69,7 @@ const QuestionBody = (props) => {
         <div id="outerBox">
           <QuestionSelectionArea answerSubmitResult={answerSubmitResult} checkboxStatus={checkboxStatus} setCheckboxStatus={setCheckboxStatus} possibleAnswers={props.currentQuestion.possibleAnswers} />
           <div id="submitButtonContainer">
-            <Button label={answerSubmitResult.result ? "Next" : "Submit"} type={ setButtonType() } handleSubmit={handleSubmit} loading={props.loading} />
+            <Button label="Submit" type={ setButtonType() } handleSubmit={handleSubmit} loading={props.loading} />
           </div>
         </div>
       </>
