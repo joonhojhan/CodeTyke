@@ -11,21 +11,22 @@ Fork the repository and follow the assignment below.
 
 To the best of your ability, implement the change described below.
 
-Create a pull request.
-
+Don't forget to create a pull request.
 
 ## To run the app
 
-To start the react frontend server:
+### To start the react frontend server:
+```
 cd codeTykeReact
 npm install
 npm start
-
-To start the node backend server:
+```
+### To start the node backend server:
+```
 cd codeTykeNode
 npm install
 npm start
-
+```
 
 ## This Week's Jira
 
@@ -49,29 +50,29 @@ https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072922
 
 -- Make use of the 'checkAnswer' function, passing in <questionId> and <checkboxStatus>
   
-Backend will return a JSON response with :
-
+The backend will return a JSON response with :
+```
 {result: <boolean>}
-
+```
 ## A correct answer should:
 
 - Change text on submit button to 'Next'
 
--Show check icon and 'Correct' Text above button 
+- Show check icon and 'Correct' Text above button 
 
 Source: https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072919
 
 
 ## An incorrect answer should: 
 
-- turn all submitted answers red for 1 second then fade back to inactive and uncheck all selections
+- Turn all submitted answers red for 1 second then fade back to inactive and uncheck all selections
 
-- show inactive submit button
+- Show inactive submit button
 
-- show 'x' icon and text "Incorrect"
+- Show 'x' icon and text "Incorrect"
 
 https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072921
 
 After Correct Answer:
 
--clicking on "next" takes user to a question with an id that is found at "/problems/"+ <nextQuestionId>
+- Clicking on "next" takes user to a question with an id that is found at "/problems/"+ <nextQuestionId>
