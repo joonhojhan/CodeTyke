@@ -30,7 +30,9 @@ npm start
 
 ## This Week's Jira
 
-This week we're tackling functionality of our multiple choice component. 
+This week we're tackling functionality of our multiple choice component. We want to handle all states in the life-cycle of this component initial load, ready to submit answer, incorrect answer and reset, correct answer and move to next question. 
+
+Each condition has mobile and desktop designs. 
 
 ## On page load: 
 
