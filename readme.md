@@ -37,7 +37,7 @@ Source: https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072923
 
 - Submit button should be inactive. User clicking submit should have no response (later we'll implement a toast). 
 
-- When user clicks on an answer card, the color should toggle between inactive (gray) and active (blue). 
+- When user clicks on an answer card, the color should toggle between inactive (white) and active (blue). 
 
 https://projects.invisionapp.com/share/HDFTUIH7TVG#/screens/279072922
 
