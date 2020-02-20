@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import LearningModule from './components/LearningModule';
+import SelectionBox from './components/SelectionBox';
 import './styles/App.scss';
 
 function App() {

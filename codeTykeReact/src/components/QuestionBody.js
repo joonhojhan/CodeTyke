@@ -1,5 +1,5 @@
 import React from 'react';
-import QuestionSelectionArea from './QuestionSelectionArea';
+import SelectionBox from './SelectionBox';
 import Button from './Button';
 import Modal from './Modal';
 
@@ -8,7 +8,7 @@ const QuestionBody = (props) => {
   const [showModal, setShowModal] = React.useState(false);
   const [answerSubmitResult, setAnswerSubmitResult] = React.useState({});
   const [checkboxStatus, setCheckboxStatus] = React.useState([false, false, false, false]);
-  const [buttonType, setButtonType] = React.useState("disabled";
+  const [buttonStatus, setButtonStatus] = React.useState("disabled");
 
     const checkAnswer=(id, answers)=>{
 
@@ -19,6 +19,7 @@ const QuestionBody = (props) => {
           return res.json();
         }).then((data)=>{
           props.setLoading(false);
+          setAnswerSubmitResult(data)
         }).catch((err)=>{
           props.setLoading(false);
           console.log(err);
@@ -27,17 +28,62 @@ const QuestionBody = (props) => {
 
     const handleSubmit=(event)=> {
 
-        // on disabled
-
-        // on next page
-
-        //on enabled
-
+      if(buttonStatus === "disabled")
+        console.log('nothing')
+      else if(buttonStatus === "affirmative"){
+        setCheckboxStatus([false, false, false, false]);
+        setAnswerSubmitResult({})
+        props.getQuestion(props.currentQuestion.nextQuestionId);
+      } else if(buttonStatus === "")
+        checkAnswer(props.currentQuestion.id, checkboxStatus);
     }
 
     const showAdditionalInfo = () => {
       setShowModal(!showModal);
     }
+
+    const selectAnswer = (id) => {
+      let checkboxArray = [...checkboxStatus];
+      checkboxArray[id] = !checkboxStatus[id];
+      setCheckboxStatus(checkboxArray)
+    }
+
+    React.useEffect(()=>{
+      if(checkboxStatus.some((i) => i === true))
+        setButtonStatus('');
+      else
+        setButtonStatus('disabled');
+    }, [checkboxStatus])
+
+    React.useEffect(() => {
+      let result = answerSubmitResult.result;
+      if(result)
+        setButtonStatus('affirmative');
+      else if (result !== undefined){
+        setButtonStatus('incorrect');
+        setTimeout(()=>{
+          setButtonStatus('disabled');
+          setCheckboxStatus([false, false, false, false]);
+          setAnswerSubmitResult({});
+        }, 1000)
+      }
+    }, [answerSubmitResult]);
+
+
+
+
+    let possibleAnswers = props.currentQuestion.possibleAnswers.map((answer, index) => {
+      let boxStatus = '';
+
+      if(answerSubmitResult.result && checkboxStatus[index])
+        boxStatus = "affirmative";
+      else if( answerSubmitResult.result === false && checkboxStatus[index])
+        boxStatus = "incorrect";
+      else if(checkboxStatus[index])
+        boxStatus = "selected";
+
+      return <SelectionBox boxStatus={boxStatus} id={index} key={index} answer={answer} onSelected={selectAnswer}/>
+    })
 
     return (
       <>
@@ -56,9 +102,11 @@ const QuestionBody = (props) => {
           </div>
         </div>
         <div id="outerBox">
-          <QuestionSelectionArea answerSubmitResult={answerSubmitResult} checkboxStatus={checkboxStatus} setCheckboxStatus={setCheckboxStatus} possibleAnswers={props.currentQuestion.possibleAnswers} />
+          <div class="flex-space-evenly">
+            {possibleAnswers}
+          </div>
           <div id="submitButtonContainer">
-            <Button label={"Submit"} type={ setButtonType() } handleSubmit={handleSubmit} loading={props.loading} />
+            <Button label={answerSubmitResult.result ? "Next" : "Submit"} status={buttonStatus} handleSubmit={handleSubmit} loading={props.loading} />
           </div>
         </div>
       </>

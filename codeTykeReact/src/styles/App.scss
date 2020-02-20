@@ -79,10 +79,6 @@ body{
   }
 }
 
-
-.selectionImageContainer img{
-  width: 150px;
-}
 #outerBox {
     background-color: white;
     box-shadow: 0px 0px 20px -15px;
@@ -97,10 +93,17 @@ body{
 }
 
 .selectionBox{
+  width: 160px;
+  overflow: hidden;
+  text-align: center;
   padding: 10px;
   margin: 10px;
+  background-color: white;
+  display: inline-block;
   border: solid 1px $elephant-paw;
   border-radius: 5px;
+  &--image {display: block; width: inherit;   }
+  &--text {font-size: 1.1em;}
   &.active {
     border: solid 1px  $morning-sky;
     background-color: $morning-sky;
@@ -127,4 +130,8 @@ body{
 
 #submitButtonContainer {
     height: 50px;
+}
+
+@media only screen and (max-width: 760) {
+  .test { max-width: 500px;}
 }
