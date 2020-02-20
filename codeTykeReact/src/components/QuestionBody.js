@@ -1,5 +1,6 @@
 import React from 'react';
 import SelectionBox from './SelectionBox';
+import QuestionStatus from './QuestionStatus';
 import Button from './Button';
 import Modal from './Modal';
 
@@ -37,7 +38,7 @@ const QuestionBody = props => {
 			setCheckboxStatus([false, false, false, false]);
 			setAnswerSubmitResult({});
 			props.getQuestion(props.currentQuestion.nextQuestionId);
-		} else if (buttonStatus === '')
+		} else if (buttonStatus === 'inProgress')
 			checkAnswer(props.currentQuestion.id, checkboxStatus);
 	};
 
@@ -52,7 +53,7 @@ const QuestionBody = props => {
 	};
 
 	React.useEffect(() => {
-		if (checkboxStatus.some(i => i === true)) setButtonStatus('');
+		if (checkboxStatus.some(i => i === true)) setButtonStatus('inProgress');
 		else setButtonStatus('disabled');
 	}, [checkboxStatus]);
 
@@ -114,6 +115,7 @@ const QuestionBody = props => {
 			<div id="outerBox">
 				<div className="flex-space-evenly">{possibleAnswers}</div>
 				<div id="submitButtonContainer">
+					<QuestionStatus result={answerSubmitResult.result} status={buttonStatus} />
 					<Button
 						label={answerSubmitResult.result ? 'Next' : 'Submit'}
 						status={buttonStatus}

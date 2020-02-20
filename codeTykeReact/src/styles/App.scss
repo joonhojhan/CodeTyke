@@ -3,7 +3,6 @@
 @import '/icons/style';
 @import '/utils/FlexStyles';
 
-
 /* Shell */
 @import '/shell/Header';
 @import '/shell/Footer';
@@ -13,125 +12,135 @@
 @import '/components/ProgressBar';
 @import '/components/Button';
 @import '/components/Modal';
-
-
-body{
-  background-image: url("/assets/background.png");
-  background-position: center;
-  background-size: cover;
+@import '/components/QuestionStatus';
+body {
+	background-image: url('/assets/background.png');
+	background-position: center;
+	background-size: cover;
 }
 
 #questionsBox {
-  max-width: 800px;
-  min-width: 320px;
-  margin: 0 auto;
-  padding: 1em 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	max-width: 800px;
+	min-width: 320px;
+	margin: 0 auto;
+	padding: 1em 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-#mainWrapper{
-  max-width: 800px;
-  margin: 40px auto 80px auto;
+#mainWrapper {
+	max-width: 800px;
+	margin: 40px auto 80px auto;
 }
 
 #questionHeader {
-    text-align: center;
-    color: $morning-sky;
-    font-weight: 600;
-}
-#questionHeaderContainer{
-  margin: 25px 10px;
+	text-align: center;
+	color: $morning-sky;
+	font-weight: 600;
 }
 #questionHeaderContainer {
-  .title {
-      padding: 10px;
-  }
-
-  .icon-info {
-    display: none;
-  }
+	margin: 25px 10px;
 }
-#questionSubHeader{
-  font-size: 16px;
-  text-align: center;
+#questionHeaderContainer {
+	.title {
+		padding: 10px;
+	}
+
+	.icon-info {
+		display: none;
+	}
+}
+#questionSubHeader {
+	font-size: 16px;
+	text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
-  #mainWrapper { margin-top: 20px; }
-  #questionSubHeader{ display: none;}
-  #questionHeaderContainer {
-    margin: 20px 10px;
-    contain: layout;
-    #questionHeader {
-      display: flex;
-      justify-content: space-between;
-      .title {
-        text-align: left;
-      }
-      .icon-info {
-        padding: 10px;
-        display: inline;
-      }
-    }
-
-  }
+	#mainWrapper {
+		margin-top: 20px;
+	}
+	#questionSubHeader {
+		display: none;
+	}
+	#questionHeaderContainer {
+		margin: 20px 10px;
+		contain: layout;
+		#questionHeader {
+			display: flex;
+			justify-content: space-between;
+			.title {
+				text-align: left;
+			}
+			.icon-info {
+				padding: 10px;
+				display: inline;
+			}
+		}
+	}
 }
 
 #outerBox {
-    background-color: white;
-    box-shadow: 0px 0px 20px -15px;
-    padding: 0px 0px 20px 0;
-    border-radius: 10px;
-    margin: 0 auto;
-    text-align: center;
+	background-color: white;
+	box-shadow: 0px 0px 20px -15px;
+	padding: 0px 0px 20px 0;
+	border-radius: 10px;
+	margin: 0 auto;
+	text-align: center;
 }
 
 @media only screen and (max-width: 800px) {
-  #outerBox { border-radius: 0; }
+	#outerBox {
+		border-radius: 0;
+	}
 }
+.selectionBox {
+	width: 160px;
+	overflow: hidden;
+	text-align: center;
+	padding: 10px;
+	margin: 10px;
+	background-color: white;
+	display: inline-block;
+	border: solid 1px $elephant-paw;
+	border-radius: 5px;
+	&--image {
+		display: block;
+		width: inherit;
+	}
+	&--text {
+		font-size: 1.1em;
+	}
+	&.active {
+		border: solid 1px $morning-sky;
+		background-color: $morning-sky;
+		color: white;
+	}
+	&.correct {
+		border: solid 1px $grass-blade;
+		background-color: $grass-blade;
+		color: white;
+	}
 
-.selectionBox{
-  width: 160px;
-  overflow: hidden;
-  text-align: center;
-  padding: 10px;
-  margin: 10px;
-  background-color: white;
-  display: inline-block;
-  border: solid 1px $elephant-paw;
-  border-radius: 5px;
-  &--image {display: block; width: inherit;   }
-  &--text {font-size: 1.1em;}
-  &.active {
-    border: solid 1px  $morning-sky;
-    background-color: $morning-sky;
-    color: white;
-  }
-  &.correct {
-    border: solid 1px $grass-blade;
-    background-color: $grass-blade;
-    color: white;
-  }
-
-  &.incorrect {
-    border: solid 1px $faded-fire;
-    background-color: $faded-fire;
-    color: white;
-  }
+	&.incorrect {
+		border: solid 1px $faded-fire;
+		background-color: $faded-fire;
+		color: white;
+	}
 }
-.checkboxText{
-  text-align: center;
+.checkboxText {
+	text-align: center;
 }
-.checkbox{
-  float: left;
+.checkbox {
+	float: left;
 }
 
 #submitButtonContainer {
-    height: 50px;
+	height: 50px;
 }
 
 @media only screen and (max-width: 760) {
-  .test { max-width: 500px;}
+	.test {
+		max-width: 500px;
+	}
 }
